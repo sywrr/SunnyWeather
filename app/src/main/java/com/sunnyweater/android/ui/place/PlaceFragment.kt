@@ -10,6 +10,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.sunnyweater.android.R
 import com.sunnyweater.android.SunnyWeatherApplication
 import kotlinx.android.synthetic.main.fragment_place.*
 
@@ -25,7 +26,7 @@ class PlaceFragment :Fragment(){
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return super.onCreateView(inflater, container, savedInstanceState)
+        return inflater.inflate(R.layout.fragment_place,container,false)
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
