@@ -48,8 +48,8 @@ class PlaceFragment :Fragment(){
                 adapter.notifyDataSetChanged()
             }
         }
-        viewModel.placeLiveData.observe(viewLifecycleOwner)  {
-            result -> val places =result.getOrNull()
+        viewModel.placeLiveData.observe(viewLifecycleOwner, Observer {
+                result -> val places =result.getOrNull()
             if(places !=null){
                 recyclerView.visibility = View.VISIBLE
                 bgImageView.visibility = View.GONE
@@ -60,6 +60,6 @@ class PlaceFragment :Fragment(){
                 Toast.makeText(SunnyWeatherApplication.context,"未能查询到任何地点",Toast.LENGTH_SHORT).show()
                 result.exceptionOrNull()?.printStackTrace()
             }
-        }
+        })
     }
 }
